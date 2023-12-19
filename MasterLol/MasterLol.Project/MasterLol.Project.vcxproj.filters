@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Component">
+      <UniqueIdentifier>{2e25a4a9-a995-4e20-b1d6-df3d983fd0fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component">
+      <UniqueIdentifier>{415aa743-fbd5-42ed-8e21-f49db99908f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menu">
+      <UniqueIdentifier>{f0c7d911-e326-4e27-9417-2a24812979a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menu">
+      <UniqueIdentifier>{40028ad6-45d7-4449-97a1-72a207cc480a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\SummonerSpell-Component">
+      <UniqueIdentifier>{b27af894-7418-4c64-bba9-53cafaf0b70d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\SummonerSpell-Component">
+      <UniqueIdentifier>{6bd8c65e-f819-4355-914c-e680c779d012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Debug.component">
+      <UniqueIdentifier>{d2ff41dd-ec2b-48dc-a841-d9f4ff42bf33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Debug.component">
+      <UniqueIdentifier>{88dd7df4-cb4a-4f7c-91b0-d8c76add802d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Visual.component">
+      <UniqueIdentifier>{e29284d6-0f66-4d8e-bc1e-ed190e14c553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Component\Visual.component">
+      <UniqueIdentifier>{7a95912c-d30a-4258-a26e-ed04dcf809f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Project\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Menu\Menu.cpp">
+      <Filter>Source Files\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\ComponentsManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugCollision.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Visual.component\TurretRange.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Visual.component\PlayerVisual.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\SummonerSpell.component\AutoSmite.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Orbwalker.component\FleeLogic.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Orbwalker.component\ClearLogic.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Orbwalker.component\Timer.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugObject.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Visual.component\CooldownTracker.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugProcessSpell.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugMissile.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugNavigation.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\Component\Debug.component\DebugPrediction.service.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Project\Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Menu\Menu.h">
+      <Filter>Header Files\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\IComponent.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\IGameService.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\ComponentsManager.h">
+      <Filter>Header Files\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Debug.component\Debug.component.h">
+      <Filter>Header Files\Component\Debug.component</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Visual.component\Visual.component.h">
+      <Filter>Header Files\Component\Visual.component</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Debug.component\DebugCollision.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Bootstarp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Visual.component\PlayerVisual.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Option.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\SummonerSpell.component\SummonerSpell.component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Orbwalker.component\Orbwalker.component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Orbwalker.component\FleeLogic.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Orbwalker.component\ClearLogic.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Orbwalker.component\Timer.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Visual.component\CooldownTracker.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Debug.component\DebugProcessSpell.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Debug.component\DebugNavigation.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Debug.component\DebugPrediction.service.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\Component\Orbwalker.component\IOrbwalker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project\Component\Visual.component\TurretRange.service.h" />
+    <None Include="Project\Component\SummonerSpell.component\AutoSmite.service.h" />
+    <None Include="Project\Component\Debug.component\DebugObject.service.h" />
+    <None Include="Project\Component\Debug.component\DebugMissile.service.h" />
+  </ItemGroup>
+</Project>

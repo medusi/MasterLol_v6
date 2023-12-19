@@ -1,0 +1,166 @@
+League of Legends PatternScans
+
+xorKey				: 35 ? ? ? ? 89 44 8C 14 41 3B CB 72 E9 -> xor eax, XOR_KEY
+
+fnPrintChat			: 83 EC 38 A1 ? ? ? ? 33 C4 89 44 24 34 53 8B 5C 24 44 56
+					  OR "SetIsChatExpanded" -> function under it directly
+
+fnIssueOrder		: 	   81 EC ? ? ? ? 56 57 8B F9 C7 84 24
+					 OLD : 81 EC ? ? ? ? 56 57 8B F9 C7 84 24
+fnOnProcessSpell	: 57 8B 7C 24 08 8B 17
+					 
+fnGetTimerExpiry	: 83 EC 08 53 8B D9 83 BB
+fnFindCamp			: 51 56 8D 44 24 0C 50 8D 71 04 8D 44 24 08 8B CE 50 E8 ? ? ? ? 8B 44 24 04 3B 06 5E 74 07
+					  OR : "Crit%1" - >function directly under it
+
+fnWorldToScreen		: 83 EC 10 56 E8 ? ? ? ? 8B 08
+fnIsNotWall			: 8B 44 24 04 53 56 57 8B 3D -> function under directly
+
+fnHpBarPosition		: 56 8B F1 E8 ? ? ? ? 80 BE ? ? ? ? ? 74 0C -> function under directly
+					  OR
+					  83 EC 08 53 57 E8 -> function above directly
+					  __m128i *__thiscall sub_fnHpBarPosition(void *this, __m128i *a2)
+					  
+
+fnAiManager			: 8B 01 FF 90 ? ? ? ? 50 E8 -> function under directly (aimanager signature : int __thiscall sub_4BDB60(int this))
+					51 0F B6 81 ? ? ? ? 56 8D B1 ? ? ? ? 33 C9 57 0F B6 7E 18 8B 54 86 04 89 54 24 08 85 FF 74 1F 8D 56 14 8B 44 8C 08 8D 52 04 33 42 FC 35 ? ? ? ? 89 44 8C 08 41 3B CF 72 E8 8B 54 24 08 8A 46 19 84 C0 74 38
+
+fnAttackDelay		: 8B 44 24 04 51 F3 0F 10 80
+fnAttackCastDelay	: 83 EC 0C 56 57 8B 7C 24 18 8B CF [old : 83 EC 0C 53 8B 5C 24 14 8B CB 57]
+
+fnCastSpell			: "ERROR: Client Tried to cast a spell fro" then UP
+						83 EC 2C 53 55 56 8B 74 24 3C
+						
+fnSpellState		: 83 EC 14 8B 44 24 1C 55
+					  OR -> 83 EC 10 8B 01 8D 54 24 08 56 57 52 FF 50 1C 8D 4C 24 08 51 8B C8 E8 ? ? ? ? 8B 4C 24 14 83 CF FF 85 C9 74 0E 8B C7 F0 0F C1 41 ? 75 05 8B 01 FF 50 04 8B 4C 24 08 85 C9 74 44
+
+fnDrawCircle		: 81 EC ? ? ? ? A1 ? ? ? ? 33 C4 89 84 24 ? ? ? ? F3 0F 10 84 24 ? ? ? ? 8D 0C 24
+					  NEW -> 81 EC ? ? ? ? A1 ? ? ? ? 33 C4 89 44 24 7C F3 0F 10 84 24 -> scroll down -> second dword_XXXXXX
+
+
+
+fnIsTargetable		: 56 8B F1 E8 ? ? ? ? 84 C0 74 2E
+fnIsAlive			: 56 8B F1 8B 06 8B 80 ?? ?? ?? ?? FF D0 84 C0 74 19
+
+fnIsBaron			: 83 EC 10 A1 ? ? ? ? 33 C4 89 44 24 0C 56 81 C1
+fnIsDragon			: 56 81 C1 ? ? ? ? E8 ? ? ? ? 8B F0 83 7E 14 10 72 02 8B 36 68
+fnIsInhib			: 81 7C 24 ? ? ? ? ? 5F 0F 94 C0 C3 32 C0 5F C3 (THIS IS NOT THE BEGINNING OF THE FUNCTION)
+fnIsNexus			: 0F 94 C0 C3 32 C0 5F C3 (THIS IS NOT THE BEGINNING OF THE FUNCTION)
+fnIsTroy			: 57 8B 7C 24 08 85 FF 74 70
+fnIsTurret			: 8B 4C 24 04 85 C9 74 11 68 00 20 00 00 E8 ? ? ? ? 84 C0 74 03 B0 01 C3 32 C0 C3
+fnIsMinion			: 8B 4C 24 04 85 C9 74 11 68 00 08 00 00 E8 ? ? ? ? 84 C0 74 03 B0 01 C3 32 C0 C3
+fnIsHero			: 8B 4C 24 04 85 C9 74 11 68 00 10 00 00 E8 ? ? ? ? 84 C0 74 03 B0 01 C3 32 C0 C3
+fnIsInhib			: 57 8B 7C 24 08 85 FF 74 6B 0F B6 47 05 33 C9 56 0F B6 77 1C
+fnIsMissile			: 8B 4C 24 04 85 C9 74 11 68 00 80 00 00 E8 ? ? ? ? 84 C0 74 03 B0 01 C3 32 C0 C3
+					
+
+fnMainLoop			: 83 EC 08 8D 04 24 0F 57 C0 //TEST
+					__int64 fnMainLoop()
+					{
+					  __int64 v1; // [sp+0h] [bp-8h]@1
+
+					  _mm_storel_pd((double *)&v1, 0i64);
+					  QueryPerformanceCounter((LARGE_INTEGER *)&v1);
+					  return v1;
+					}
+
+/* SKIN */
+fnGetCharacterInfo	: "Load Package - %s:%u" 81 EC ?? ?? ?? ?? A1 ?? ?? ?? ?? 33 C4 89 84 24 ?? ?? ?? ?? 56 8B B4 24 ?? ?? ?? ?? 8B C6
+fnSetModel			: 80 7C 24 ?? ?? 56 8B 74 24 08
+void SetSkin(Object * pEntity, int SkinID)
+{
+	pEntity->pCharacterInfo = GetCharacterInfo(reinterpret_cast<int>(pEntity->ChampionName), SkinID, 0);
+	FuncSetModel(reinterpret_cast<char*>(pEntity), reinterpret_cast<int>(pEntity->ChampionName), SkinID, 0);
+}
+#define oCampManagerClient				// "game_ping_[Jungle]_Alive" -> above : mov     ecx, dword_19543D4
+#define oChatClientPtr 0x15CC330		// "Chat_Box_Open"				-> previous function -> first instruction -> mov ecx, dword_oChatClientPtr
+#define oLocalPlayer   0x2E774E8		// "PostGameSetup"				-> mov eax, dword_oLocalPlayer
+#define oObjManager    0x2E76C88		// "Reconnect being processed"	-> mov ecx, offset byte_37F6C88
+#define oGameTime      0x2E73400		// 83 EC 10 53 8B 1D ? ? ? ? 55 -> decompile -> if ( (float)(v17 - *(float *)&dword_GameTime) < 0.0 )
+#define oHudInstance   0x15CE9CC		// "PerSide.ini"
+#define oRenderer      0x2E92DD4			// "UI_LoadScreen_Frame_01.dds" -> cmp dword_oRenderer, 0
+#define oUnderMouseObj 0x221F944		// C7 05 ? ? ? ? ? ? ? ? E8 ? ? ? ? 83 C4 04 FF B4 24
+
+///////////////////////
+///////////////////////
+//////// OFFSETS //////
+///////////////////////
+///////////////////////
+
+oGameVersion		: "Version 8.24.255.8524 [PUBLIC]"
+
+oGameTime			: 83 EC 10 53 8B 1D ? ? ? ? 55
+					.text:011577B0 83 EC 10                          sub     esp, 10h
+					.text:011577B3 53                                push    ebx
+					.text:011577B4 8B 1D D4 DC 1E 02                 mov     ebx, dword_21EDCD4
+					.text:011577BA 55                                push    ebp
+					.text:011577BB 56                                push    esi
+					.text:011577BC 57                                push    edi
+					.text:011577BD E8 EE 9A 60 00                    call    sub_17612B0
+					.text:011577C2 83 3D D8 E2 DC 03+                cmp     dword_3DCE2D8, 0 // oGameTime = 3DCE2D8 + 0x10
+
+oLocalPlayer 		: "Play_sfx_TEMP_Reset_Ability"
+					.text:010CDEDB 8B 0D C0 2B DD 03                 mov     ecx, dword_3DD2BC0
+					.text:010CDEE1 8B 01                             mov     eax, [ecx]
+					.text:010CDEE3 8D B9 60 02 00 00                 lea     edi, [ecx+260h]
+					.text:010CDEE9 FF 90 A4 00 00 00                 call    dword ptr [eax+0A4h]
+					.text:010CDEEF 6A 1B                             push    1Bh
+					.text:010CDEF1 68 B0 5B F2 01                    push    offset aPlay_sfx_temp_ ; "Play_sfx_TEMP_Reset_Ability"
+
+oHudManager			: "PerSide.ini"
+					.text:01243156 83 EC 08                          sub     esp, 8
+					.text:01243159 89 35 88 98 52 02                 mov     dword_2529888, esi
+					.text:0124315F 54                                push    esp
+					.text:01243160 E8 FB 41 FC FF                    call    sub_1207360
+					.text:01243165 83 C4 04                          add     esp, 4
+					.text:01243168 8B CE                             mov     ecx, esi
+					.text:0124316A E8 91 B2 2E 00                    call    sub_152E400
+					.text:0124316F 8B 45 00                          mov     eax, [ebp+0]
+					.text:01243172 8D 4C 24 20                       lea     ecx, [esp+174h+var_154]
+					.text:01243176 6A 0B                             push    0Bh
+					.text:01243178 68 AC 9C F4 01                    push    offset aPerside_ini ; "PerSide.ini"
+					
+oObjectManager		: "Reconnect being processed"
+					.text:01262399 B9 08 1C DD 03                    mov     ecx, offset byte_3DD1C08
+					.text:0126239E E8 DD 19 FA FF                    call    sub_1203D80
+					.text:012623A3 8B 35 D8 F7 DC 03                 mov     esi, dword_3DCF7D8
+					.text:012623A9 8D 8C 24 98 0C 00+                lea     ecx, [esp+0C98h]
+					.text:012623B0 68 E0 C2 F4 01                    push    offset aReconnectBeing ; "Reconnect being processed"
+
+
+
+
+
+
+///////////////////
+///////////////////
+//////// OLD //////
+///////////////////
+///////////////////
+
+
+League of Legends PatternScans
+
+fnIssueOrder   	 : 81 EC 68 ?? 00 00 
+fnMainLoop     	 : 83 EC 08 53 8B D9 89 5C 24 04
+fnDrawCircle   	 : 81 EC ? ? ? ? A1 ? ? ? ? 33 C4 89 ? ? ? ? ? ? 83 3D ? ? ? ? ? 56 8B ? ? ? ? ? ? 57 (should be 2nd)
+fnCastSpell    	 : ALE-229C053F 83 EC ?? 53 55 8B ?? ?? ?? 56 57 89 ?? ?? ?? 83 (0x1160720 sub esp,34)
+fnAttackCastDelay: (second) 83 ec ? 53 8b 5c ? ? 8b cb 56
+fnAttackDelay	 : (second) 57 8B 7C 24 08 8B 87 ? ? ? ? 8D 8F ? ? ? ?
+fnOnProcessSpell : 57 8B 7C 24 08 8B 17 85 D2 75
+fnSpellState	 : ALE-84F0B873
+
+fnObjectCreate   : 83 EC 08 56 8B F1 8B 46 6C C6 (sub esp,08)
+fnObjectDelete   : 83 EC 10 53 55 8B 6C 24 1C 56 (sub esp, 10)
+
+
+oRenderer      : 28 F0 ?? ?? ?? ?? ?? ?? ?? FE
+oLocalPlayer   : ?? 41 24 3A
+oObjectManager : search for 10000 (__int32)
+oCursor        : ?? 69 78 ?? 80 ?? ?? ?? ??
+vGameTime      : 00 f3 c0 0a 00 c5 c5 + 0x14
+
+NAVIGATION_AI  : ff 90 ? ? ? ? 80 b8 98 01 00 00 ? 74 ? 8b 0d
+
+//fnCastDelay    	 : 57 8B 7C 24 08 8B 87 ? ? ? ? 8D 8F ? ? ? ? || 83 ec ? 53 8b 5c ? ? 8b cb 56
+

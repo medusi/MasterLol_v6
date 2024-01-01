@@ -19,5 +19,3 @@ League of Legends Private C++ Script Platform
 - [[Youtube] - Debug Collision](https://www.youtube.com/watch?v=7YtsYgkkZ1U)
 
 - [[Youtube] - Evade Spell](https://www.youtube.com/watch?v=Gc3_DEt0VE4&feature=youtu.be)
-
-
